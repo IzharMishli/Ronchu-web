@@ -5,9 +5,61 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+  
 }
+
+.bodyDiv {
+  width : 90%;
+  margin: 10px auto;
+}
+.navDiv {
+  margin: auto;
+  width : 90%;
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.prod-img{
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+}
+
+.prodTitle{
+  font-family: 'Suez One', serif;
+  font-size: 20px;
+}
+
+.App {
+  text-align: center;
+}
+
+.contact-whatsapp{
+  font-family: 'Suez One', serif;
+  font-size: 30px;
+}
+
+.contact-icon{
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .navDiv {
+    width : 100%;
+  }
+  .bodyDiv {
+    width : 100%;
+  }
+  .prod-img{
+    max-width: 200px;
+  }
 }
