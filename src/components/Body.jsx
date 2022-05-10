@@ -1,9 +1,23 @@
 import React from "react";
 import "../index.css"
 import Product from "./Product";
+import InstagramFeed  from './Insta'
+import '../styles/insta.css'
+
+
 
 export default function()
 {
+    /*function createFeed(){
+        var userFeed = new ins.Instafeed();
+        userFeed.get = "user";
+        userFeed.target="instafeed-container";
+        userFeed.resolution = "low_resolution";
+        userFeed.limit=3; 
+        userFeed.accessToken="IGQVJXUEV1X3NzNlplbkpLT1dQNllmeGk5eTh5aHdseFBIOHJuMEtsVEJDTU4xT0FJWHVaQkFBbHI5X1FVQ1dxV0paeERsc0pKQmVXRmtfeVIxanFmVHpGMDFzdGw0RkcwOVVNeFhnYkwtTHFMY1dxdwZDZD";
+        
+        userFeed.run();
+    }*/
     return( 
         <div className="bodyDiv">
             <h2 className="contact-whatsapp">
@@ -20,6 +34,11 @@ export default function()
                 </div>
             </div>
             <hr />
+
+            <InstagramFeed 
+            token="IGQVJVR2FsQzFYckFlQVRnd1RNb0ZAyVXNTVTFLTFo0ejdFRm5WZA2VrbWhacEUwTUdFbjZAUdjZALdFRlUnB0bGx2N1QwcDQ0U01kWm5MbEZADOXNLVDB3b19WVEtYMlVsY28tN0pXUTlpYkV0TmlieUtNRAZDZDy"  
+            counter="50"/>
+
         </div>
     )
 }
