@@ -4,26 +4,16 @@ import Product from "./Product";
 import InstagramFeed  from './Insta'
 import '../styles/insta.css'
 import InstaFeed from "./InstaFeed";
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 
 export default function()
 {
-    /*function createFeed(){
-        var userFeed = new ins.Instafeed();
-        userFeed.get = "user";
-        userFeed.target="instafeed-container";
-        userFeed.resolution = "low_resolution";
-        userFeed.limit=3; 
-        userFeed.accessToken="IGQVJXUEV1X3NzNlplbkpLT1dQNllmeGk5eTh5aHdseFBIOHJuMEtsVEJDTU4xT0FJWHVaQkFBbHI5X1FVQ1dxV0paeERsc0pKQmVXRmtfeVIxanFmVHpGMDFzdGw0RkcwOVVNeFhnYkwtTHFMY1dxdwZDZD";
-        
-        userFeed.run();
-
-
-        <InstagramFeed 
-            token="IGQVJVR2FsQzFYckFlQVRnd1RNb0ZAyVXNTVTFLTFo0ejdFRm5WZA2VrbWhacEUwTUdFbjZAUdjZALdFRlUnB0bGx2N1QwcDQ0U01kWm5MbEZADOXNLVDB3b19WVEtYMlVsY28tN0pXUTlpYkV0TmlieUtNRAZDZDy"  
-            counter="50"/>
-    }*/
     return( 
         <div className="bodyDiv">
             <section id="contact-part">
@@ -33,6 +23,7 @@ export default function()
             צרו קשר
             <a href="https://www.instagram.com/ron_sharabi/"><img className="contact-icon" src={require("../images/instagram.png")}/></a>
             </h2>
+            <Link to="/about"><button type="button" class="btn btn-outline-success">צור הזמנה</button></Link>
             </section>
             <hr />
             <section id="products-part">
