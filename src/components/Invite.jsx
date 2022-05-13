@@ -2,6 +2,7 @@ import React from "react";
 import "../index.css"
 import "../styles/invitestyle.css"
 import Selector from "./invite/Selector"
+import FoodOption from "./invite/FoodOption"
 import {
     BrowserRouter as Router,
     Switch,
@@ -17,7 +18,7 @@ export default function()
             {/* ---------- Back to main page ----------- */}
         <div class="form-group row">
                 <div class="col-sm-12">
-                <Link to="/"><button type="button" class="btn btn-primary">חזרה לעמוד הבית</button></Link>
+                <Link to="/"><button type="button" class="btn btn-warning">חזרה לעמוד הבית</button></Link>
                 </div>
             </div>
         
@@ -30,6 +31,13 @@ export default function()
                     <input type="text" class="form-control" id="inputName3" placeholder="שם מלא" />
                 </div>
                 <label for="inputName3" class="col-sm-2 col-form-label">שם מלא</label>
+            </div>
+            {/* ---------- Name ----------- */}
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName3" placeholder="טלפון" />
+                </div>
+                <label for="inputName3" class="col-sm-2 col-form-label">טלפון</label>
             </div>
             {/* ---------- Email ----------- */}
             <div class="form-group row">
@@ -54,27 +62,12 @@ export default function()
                 
                 <div class="col-sm-10">
                 <div class="form-group row">
-                    <div class="col-sm-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                            <label class="form-check-label" for="gridCheck1">פסטה שמנת פטריות</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                            <label class="form-check-label" for="gridCheck1">פסטה רוזה</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                            <label class="form-check-label" for="gridCheck1">פסטה טעימה מאוד</label>
-                        </div>
-                    </div>
+                    <FoodOption food="פסטה שמנת פטריות" />
+                    <FoodOption food="פסטה רוזה" />
+                    <FoodOption food="פסטה טעימה מאוד" />
                     </div>
                 </div>
-                <div class="col-sm-2">מנות חלביות</div>
+                <label class="col-sm-2 col-form-label">מנות חלביות</label>
                 
             </div>
 
@@ -84,41 +77,26 @@ export default function()
                 
                 <div class="col-sm-10">
                 <div class="form-group row">
-                    <div class="col-sm-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                            <label class="form-check-label" for="gridCheck1">קינוח טעים מאוד</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                            <label class="form-check-label" for="gridCheck1">פירות</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                            <label class="form-check-label" for="gridCheck1">קינוח טעים רצח</label>
-                        </div>
-                    </div>
+                <FoodOption food="קינוח טעים רצח" />
+                    <FoodOption food="פירות" />
+                    <FoodOption food="קינוח טעים מאוד" />
                     </div>
                 </div>
-                <div class="col-sm-2">קינוחים</div>
+                <label class="col-sm-2 col-form-label">קינוחים</label>
                 
             </div>
 
             {/* ---------- Evaluated price ----------- */}
             <div class="form-group row">
                             <div class="col-sm-12">
-                            <h1>מחיר מוערך: XXX</h1>
+                            <h1 className="eval-price-text">מחיר מוערך: XXX</h1>
                             </div>
                         </div>
 
             {/* ---------- Send ----------- */}
             <div class="form-group row">
                 <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary">שליחה</button>
+                <button type="submit" class="btn btn-success">שליחה</button>
                 </div>
             </div>
             

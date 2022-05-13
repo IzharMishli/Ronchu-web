@@ -98,7 +98,11 @@ h2, h1{
    margin: auto;
 }
 
-@media only screen and (max-width: 700px) {
+.row {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 850px) {
 
   .navDiv {
     width : 100%;
