@@ -18,11 +18,11 @@ export default function(props)
     }
 
         return( 
-        <div class="form-group row">
-            <div class="col-sm-10">
+        <div class="form-group row row-field">
+            <div class="col-sm-10 col-8">
                 <input name={props.name} type={props.type} class="form-control" onChange={handleChange} />
             </div>
-            <label class="col-sm-2 col-form-label">{props.label}</label>
+            <label class="col-sm-2 col-4 col-form-label">{props.label}</label>
         </div>
                   
     )

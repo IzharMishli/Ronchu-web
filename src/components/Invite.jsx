@@ -20,17 +20,19 @@ export default function()
         name: "",
         email: "",
         phone: "",
-        amount: Number,
+        amount: 0,
         foods: [],
         deserts: []
     })
 
     const [iserror, setIserror] = useState(true);
+    const [price, setPrice] = useState(0);
 
     useEffect(function inviteChanged() {
         if (!iserror)
         console.log(invite);
         setIserror(true);
+        calcPrice();
     }, [invite]);
 
     function handleChange(val, isAdding=true) {
@@ -75,77 +77,89 @@ export default function()
           }
         
         
+
         
+    }
+
+    function calcPrice(){
+        var price = invite.amount * 20 * (invite.foods.length > 0 ? invite.foods.length*1.5 : 1) * (invite.deserts.length > 0 ? invite.deserts.length*1.5 : 1);
+        
+        setPrice(price);
     }
 
     return( 
         <div className="invite-page">
             {/* ---------- Back to main page ----------- */}
-        <div class="form-group row">
+            <div class="form-group row">
                 <div class="col-sm-12">
                 <Link to="/"><button type="button" class="btn btn-warning">חזרה לעמוד הבית</button></Link>
                 </div>
             </div>
-        
-        <div className="invite-part">
-            {/* ---------- Name ----------- */}
-            <Field label="שם מלא" type="text" name="name" func={handleChange} />
-            <Field label="תאריך" type="date" name="date" func={handleChange} />
-            <Field label="טלפון" type="tel" name="phone" func={handleChange} />
-            <Field label="כתובת" type="text" name="address" func={handleChange} />
-            <Field label="עיר" type="text" name="city" func={handleChange} />
-            <Field label="אימייל" type="email" name="email" func={handleChange} />
             
-            {/* ---------- Participates ----------- */}
-            <div class="form-group row">
-                <div class="col-sm-10">
-                    <div class="col-auto my-1">
-                        <Selector func={handleChange} />
-                        
-                    </div>
-                </div>
-                <label class="col-sm-2 col-form-label">משתתפים</label>
-                </div>
-            {/* ---------- main food ----------- */}
-            
-            <div class="form-group row choose-area">
+            <div className="invite-part">
+                {/* ---------- Name ----------- */}
+                <Field label="שם מלא" type="text" name="name" func={handleChange} />
+                <Field label="תאריך" type="date" name="date" func={handleChange} />
+                <Field label="טלפון" type="tel" name="phone" func={handleChange} />
+                <Field label="כתובת" type="text" name="address" func={handleChange} />
+                <Field label="עיר" type="text" name="city" func={handleChange} />
+                <Field label="אימייל" type="email" name="email" func={handleChange} />
                 
-                <div class="col-sm-10">
+                {/* ---------- Participates ----------- */}
                 <div class="form-group row">
-                    <FoodOption name="foods" food="פסטה שמנת פטריות" func={handleChange}/>
-                    <FoodOption name="foods" food="פסטה רוזה" func={handleChange}/>
-                    <FoodOption name="foods" food="פסטה טעימה מאוד" func={handleChange}/>
+                    <div class="col-sm-10 col-8">
+                        <div class="col-auto my-1">
+                            <Selector func={handleChange} />
+                            
+                        </div>
                     </div>
+                    <label class="col-sm-2 col-4 col-form-label">משתתפים</label>
+                    </div>
+                {/* ---------- main food ----------- */}
+                
+                <div class="form-group row choose-area">
+                    
+                    <div class="col-10">
+                    <div class="form-group row">
+                        <FoodOption name="foods" food="פסטה שמנת פטריות" func={handleChange}/>
+                        <FoodOption name="foods" food="פסטה רוזה" func={handleChange}/>
+                        <FoodOption name="foods" food="פסטה טעימה מאוד" func={handleChange}/>
+                        </div>
+                    </div>
+                    <label class="col-2 col-form-label">מנות חלביות</label>
+                    
                 </div>
-                <label class="col-sm-2 col-form-label">מנות חלביות</label>
-                
-            </div>
 
-            {/* ---------- main food ----------- */}
-            
-            <div class="form-group row choose-area">
+                {/* ---------- main food ----------- */}
                 
-                <div class="col-sm-10">
+                <div class="form-group row choose-area">
+                    
+                    <div class="col-10">
+                    <div class="form-group row">
+                    <FoodOption name="deserts" food="קינוח טעים רצח" func={handleChange} />
+                        <FoodOption name="deserts" food="פירות" func={handleChange} />
+                        <FoodOption name="deserts" food="קינוח טעים מאוד" func={handleChange} />
+                        </div>
+                    </div>
+                    <label class="col-2 col-form-label">קינוחים</label>
+                    
+                </div>
+
+                {/* ---------- Evaluated price ----------- */}
                 <div class="form-group row">
-                <FoodOption name="deserts" food="קינוח טעים רצח" func={handleChange} />
-                    <FoodOption name="deserts" food="פירות" func={handleChange} />
-                    <FoodOption name="deserts" food="קינוח טעים מאוד" func={handleChange} />
+                    <div class="col-sm-12">
+                    <h1 className="eval-price-text">מחיר מוערך: {price}</h1>
                     </div>
                 </div>
-                <label class="col-sm-2 col-form-label">קינוחים</label>
+
+                {/* ---------- Send ----------- */}
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                    <button type="submit" class="btn btn-success">שליחה</button>
+                    </div>
+                </div>
                 
             </div>
-
-            {/* ---------- Evaluated price ----------- */}
-            <PriceArea data={invite} />
-
-            {/* ---------- Send ----------- */}
-            <div class="form-group row">
-                <div class="col-sm-12">
-                <button type="submit" class="btn btn-success">שליחה</button>
-                </div>
-            </div>
-            
-        </div></div>
+        </div>
     )
 }

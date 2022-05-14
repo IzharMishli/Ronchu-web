@@ -32,7 +32,10 @@
 
 .form-group{
     margin: 5px 0;
+    
 }
+
+
 
 .form-control{
     text-align: right;
@@ -43,7 +46,7 @@
 }
 
 .form-check{
-    padding: 5px;
+    
     margin-bottom: auto;
 }
 .col-sm-4{
@@ -72,11 +75,16 @@
     margin: auto;
 }
 
+
+
 @media only screen and (max-width: 1000px) {
 
     .invite-part{
         width: 60%;
         border-radius: 16px
+    }
+    .form-control {
+        width: 70%;
     }
   }
 
