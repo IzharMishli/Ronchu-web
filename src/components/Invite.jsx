@@ -1,8 +1,12 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import "../index.css"
 import "../styles/invitestyle.css"
 import Selector from "./invite/Selector"
 import FoodOption from "./invite/FoodOption"
+import Field from "./invite/Field"
+import PriceArea from "./invite/PriceArea"
+
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,7 +16,68 @@ import {
 
 export default function()
 {
-    
+    const [invite, setInvite] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        amount: Number,
+        foods: [],
+        deserts: []
+    })
+
+    const [iserror, setIserror] = useState(true);
+
+    useEffect(function inviteChanged() {
+        if (!iserror)
+        console.log(invite);
+        setIserror(true);
+    }, [invite]);
+
+    function handleChange(val, isAdding=true) {
+        setIserror(false);
+        const {name, value} = val;
+        if (isAdding){
+            setInvite((prev) => {
+                if (Array.isArray(invite[name])){
+                        const tempArr = invite[name];
+                        tempArr.push(value);
+                        return{
+                            ...prev,
+                            [name]: tempArr
+                        }}
+                else{
+                    return{
+                        ...prev,
+                        [name]:value
+                    }
+                }
+            })
+        }else if(Array.isArray(invite[name])){
+            var tempArr = invite[name];
+            tempArr = removeItemAll(tempArr, value);
+            setInvite((prev) => {
+            return{
+                ...prev,
+                [name]: tempArr
+            }})
+        }
+
+        function removeItemAll(arr, value) {
+            var i = 0;
+            while (i < arr.length) {
+              if (arr[i] === value) {
+                arr.splice(i, 1);
+              } else {
+                ++i;
+              }
+            }
+            return arr;
+          }
+        
+        
+        
+    }
+
     return( 
         <div className="invite-page">
             {/* ---------- Back to main page ----------- */}
@@ -23,48 +88,33 @@ export default function()
             </div>
         
         <div className="invite-part">
-
-
             {/* ---------- Name ----------- */}
-            <div class="form-group row">
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputName3" placeholder="שם מלא" />
-                </div>
-                <label for="inputName3" class="col-sm-2 col-form-label">שם מלא</label>
-            </div>
-            {/* ---------- Name ----------- */}
-            <div class="form-group row">
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputName3" placeholder="טלפון" />
-                </div>
-                <label for="inputName3" class="col-sm-2 col-form-label">טלפון</label>
-            </div>
-            {/* ---------- Email ----------- */}
-            <div class="form-group row">
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" />
-                </div>
-                <label for="inputEmail3" class="col-sm-2 col-form-label">אימייל</label>
-            </div>
+            <Field label="שם מלא" type="text" name="name" func={handleChange} />
+            <Field label="תאריך" type="date" name="date" func={handleChange} />
+            <Field label="טלפון" type="tel" name="phone" func={handleChange} />
+            <Field label="כתובת" type="text" name="address" func={handleChange} />
+            <Field label="עיר" type="text" name="city" func={handleChange} />
+            <Field label="אימייל" type="email" name="email" func={handleChange} />
+            
             {/* ---------- Participates ----------- */}
             <div class="form-group row">
                 <div class="col-sm-10">
                     <div class="col-auto my-1">
-                        <Selector />
+                        <Selector func={handleChange} />
                         
                     </div>
                 </div>
-                <label for="inputPassword3" class="col-sm-2 col-form-label">משתתפים</label>
+                <label class="col-sm-2 col-form-label">משתתפים</label>
                 </div>
             {/* ---------- main food ----------- */}
             
-            <div class="form-group row">
+            <div class="form-group row choose-area">
                 
                 <div class="col-sm-10">
                 <div class="form-group row">
-                    <FoodOption food="פסטה שמנת פטריות" />
-                    <FoodOption food="פסטה רוזה" />
-                    <FoodOption food="פסטה טעימה מאוד" />
+                    <FoodOption name="foods" food="פסטה שמנת פטריות" func={handleChange}/>
+                    <FoodOption name="foods" food="פסטה רוזה" func={handleChange}/>
+                    <FoodOption name="foods" food="פסטה טעימה מאוד" func={handleChange}/>
                     </div>
                 </div>
                 <label class="col-sm-2 col-form-label">מנות חלביות</label>
@@ -73,13 +123,13 @@ export default function()
 
             {/* ---------- main food ----------- */}
             
-            <div class="form-group row">
+            <div class="form-group row choose-area">
                 
                 <div class="col-sm-10">
                 <div class="form-group row">
-                <FoodOption food="קינוח טעים רצח" />
-                    <FoodOption food="פירות" />
-                    <FoodOption food="קינוח טעים מאוד" />
+                <FoodOption name="deserts" food="קינוח טעים רצח" func={handleChange} />
+                    <FoodOption name="deserts" food="פירות" func={handleChange} />
+                    <FoodOption name="deserts" food="קינוח טעים מאוד" func={handleChange} />
                     </div>
                 </div>
                 <label class="col-sm-2 col-form-label">קינוחים</label>
@@ -87,11 +137,7 @@ export default function()
             </div>
 
             {/* ---------- Evaluated price ----------- */}
-            <div class="form-group row">
-                            <div class="col-sm-12">
-                            <h1 className="eval-price-text">מחיר מוערך: XXX</h1>
-                            </div>
-                        </div>
+            <PriceArea data={invite} />
 
             {/* ---------- Send ----------- */}
             <div class="form-group row">

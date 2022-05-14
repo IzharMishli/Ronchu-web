@@ -1,11 +1,24 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 
 
-export default function()
+export default function(props)
 {
-    
+    const [iserror, setIserror] = useState(true);
+    const [val,setVal] = useState({name: "", value: ""});
+
+    useEffect(() => {
+        if(!iserror && val.name){
+            props.func(val)
+        }
+    }, [iserror, val])
+
+    const handleChange = (event) => {
+        setIserror(false);
+        setVal({name: event.target.name, value: event.target.value});
+    }
+
     return( 
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <select name="amount" class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={handleChange}>
             <option selected>כמות</option>
             <option value="1">1</option>
             <option value="2">2</option>
