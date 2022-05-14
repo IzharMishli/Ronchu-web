@@ -23,7 +23,7 @@ export default function()
             צרו קשר
             <a href="https://www.instagram.com/ron_sharabi/"><img className="contact-icon" src={require("../images/instagram.png")}/></a>
             </h2>
-            <Link to="/about"><button type="button" class="btn btn-outline-success">צור הזמנה</button></Link>
+            <Link to="/invite"><button type="button" class="btn btn-outline-success">צור הזמנה</button></Link>
             </section>
             <hr />
             <section id="products-part">

@@ -7,13 +7,15 @@ import { Routes, Route, Link } from "react-router-dom";
 import "../index.css"
 import "../styles/insta.css"
 
+
 function App() {
+  
   return (
     <div className="App">
     <Header />
     <Routes>
         <Route path="/" element={<Body />} />
-        <Route path="about" element={<Invite />} />
+        <Route path="invite" element={<Invite />} />
     </Routes>
     <Footer />
     </div>
