@@ -1,0 +1,20 @@
+{
+  "main.css": "./static/css/main.c9abe06b.chunk.css",
+  "main.js": "./static/js/main.607f0cf4.chunk.js",
+  "main.js.map": "./static/js/main.607f0cf4.chunk.js.map",
+  "static/js/1.4a374a6b.chunk.js": "./static/js/1.4a374a6b.chunk.js",
+  "static/js/1.4a374a6b.chunk.js.map": "./static/js/1.4a374a6b.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
+  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
+  "static/media/index.css": "./static/media/ganclm_bold-webfont.95c68112.ttf",
+  "static/media/instagram.png": "./static/media/instagram.39e5122a.png",
+  "static/media/courses.png": "./static/media/courses.b69209ff.png",
+  "static/media/birthdays.png": "./static/media/birthdays.f6c564c4.png",
+  "static/media/bride.pdf.png": "./static/media/bride.pdf.f8b1948a.png",
+  "static/media/circleLogo2.png": "./static/media/circleLogo2.34c28f7e.png",
+  "static/media/bgimage.png": "./static/media/bgimage.e61281b7.png",
+  "static/css/main.c9abe06b.chunk.css.map": "./static/css/main.c9abe06b.chunk.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.e045c1cb4f57a960fb0d5b7d6d9c0c54.js": "./precache-manifest.e045c1cb4f57a960fb0d5b7d6d9c0c54.js",
+  "service-worker.js": "./service-worker.js"
+}
