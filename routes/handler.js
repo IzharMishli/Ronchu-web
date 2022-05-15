@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Schemas = require('../models/Schemas.js');
-
+/*
 router.get('/tweets', async (req, res) => {
     const tweets = Schemas.Tweets;
 
@@ -42,6 +42,36 @@ router.post('/addTweet', async (req, res) => {
     }
 });
 
+router.post('/createinvite', async (req, res) => {
+    
+    //const userTweet = req.body.tweetInput;
+    //const user = Schemas.Users;
+    //const userId = await user.findOne({username:'eaglefang'}).exec();
+    
+    console.log('-------------------------ss------------');
+    const invite = new Schema.Invite({
+        name: "newbdika",
+        date: "test"
+        
+    });
+
+    try {
+        await invite.save( (err, newTweetResults) => {
+            console.log('-------------------------pp------------');
+            if (err) res.end('Error Saving.');
+            res.redirect('/');
+            res.end();
+        });
+    } catch(err) {
+        console.log('-------------------------kk------------');
+        console.log(err);
+        res.redirect('/');
+        res.end();
+    }
+});
+
+
+
 router.get('/addUser', async (req, res) => {
     const user = {username: 'eaglefang', fullname: 'Sensei Johnny'};
     const newUser = new Schemas.Users(user);
@@ -74,6 +104,6 @@ router.get('/addUser', async (req, res) => {
         res.end('User not added!');
     }
 });
-*/
 
-module.exports = router;
+
+module.exports = router; */

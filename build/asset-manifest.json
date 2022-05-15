@@ -1,20 +1,21 @@
 {
-  "main.css": "./static/css/main.c9abe06b.chunk.css",
-  "main.js": "./static/js/main.607f0cf4.chunk.js",
-  "main.js.map": "./static/js/main.607f0cf4.chunk.js.map",
-  "static/js/1.4a374a6b.chunk.js": "./static/js/1.4a374a6b.chunk.js",
-  "static/js/1.4a374a6b.chunk.js.map": "./static/js/1.4a374a6b.chunk.js.map",
-  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
-  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
-  "static/media/index.css": "./static/media/ganclm_bold-webfont.95c68112.ttf",
-  "static/media/instagram.png": "./static/media/instagram.39e5122a.png",
-  "static/media/courses.png": "./static/media/courses.b69209ff.png",
-  "static/media/birthdays.png": "./static/media/birthdays.f6c564c4.png",
-  "static/media/bride.pdf.png": "./static/media/bride.pdf.f8b1948a.png",
-  "static/media/circleLogo2.png": "./static/media/circleLogo2.34c28f7e.png",
-  "static/media/bgimage.png": "./static/media/bgimage.e61281b7.png",
-  "static/css/main.c9abe06b.chunk.css.map": "./static/css/main.c9abe06b.chunk.css.map",
-  "index.html": "./index.html",
-  "precache-manifest.e045c1cb4f57a960fb0d5b7d6d9c0c54.js": "./precache-manifest.e045c1cb4f57a960fb0d5b7d6d9c0c54.js",
-  "service-worker.js": "./service-worker.js"
+  "files": {
+    "main.css": "./static/css/main.d2e5e0fd.css",
+    "main.js": "./static/js/main.8cb0ef7f.js",
+    "static/media/bgimage.png": "./static/media/bgimage.3ce1f8d610c82cc1c542.png",
+    "static/media/birthdays.png": "./static/media/birthdays.ba6f4673f395f4beab77.png",
+    "static/media/bride.pdf.png": "./static/media/bride.pdf.ab78ae9a3a58e5282e69.png",
+    "static/media/courses.png": "./static/media/courses.8645a92b9a4cb3f0f772.png",
+    "static/media/circleLogo2.png": "./static/media/circleLogo2.9c55321690435015a5d9.png",
+    "static/media/ganclm_bold-webfont.ttf": "./static/media/ganclm_bold-webfont.a87a0b32777d8192b6f7.ttf",
+    "static/media/instagram.png": "./static/media/instagram.fff4d0f1e325de865243.png",
+    "static/media/ganclm_bold-webfont.woff": "./static/media/ganclm_bold-webfont.56f376ba20c7516797e6.woff",
+    "index.html": "./index.html",
+    "main.d2e5e0fd.css.map": "./static/css/main.d2e5e0fd.css.map",
+    "main.8cb0ef7f.js.map": "./static/js/main.8cb0ef7f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2e5e0fd.css",
+    "static/js/main.8cb0ef7f.js"
+  ]
 }
