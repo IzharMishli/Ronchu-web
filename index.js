@@ -61,12 +61,12 @@ app.post('/createinvite', async (req, res) => {
 if (process.env.NODE_ENV === 'production') {    
     // Serve any static files
     
-    var dir = path.resolve(__dirname, "build");
+    var dir = path.resolve(__dirname, "client/build");
     app.use(express.static(dir));
     
     // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
-        res.sendFile(path.join(__dirname, "build", "index.html"));
+        res.sendFile(path.join(__dirname, "client/build", "index.html"));
     });
 /*
     app.get('*', (req, res) => {
