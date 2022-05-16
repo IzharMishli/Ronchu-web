@@ -7,7 +7,7 @@ import axios from 'axios';
     }
 
    const addData = async(data)=>{
-   return await axios.post(url,data).
+   return await axios.post("/createinvite",data).
    then(res => {
        console.log(res); 
        console.log(res.data);

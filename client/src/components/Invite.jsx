@@ -31,6 +31,7 @@ export default function()
 
     const [iserror, setIserror] = useState(true);
     const [price, setPrice] = useState(0);
+    const [status, setStatus] = useState("");
 
     useEffect(function inviteChanged() {
         if (!iserror)
@@ -89,6 +90,7 @@ export default function()
 
     const addgetData= async()=>{
         await addData({data: invite, price: price});
+        setStatus("נשלח בהצלחה");
       }
 
     return( 
@@ -99,7 +101,9 @@ export default function()
                 <Link to="/"><button type="button" class="btn btn-warning">חזרה לעמוד הבית</button></Link>
                 </div>
             </div>
-            
+            <h1>{status}</h1>
+
+
             <div className="invite-part">
                 {/* ---------- Name ----------- */}
                 <Field label="שם מלא" type="text" name="name" func={handleChange} />

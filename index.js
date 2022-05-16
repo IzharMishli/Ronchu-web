@@ -29,11 +29,6 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/createinvite', async (req, res) => {
-    
-    //const userTweet = req.body.tweetInput;
-    //const user = Schemas.Users;
-    //const userId = await user.findOne({username:'eaglefang'}).exec();
-    
     const data = req.body.data;
     console.log(req.body);
     data["price"] = req.body.price
@@ -48,7 +43,6 @@ app.post('/createinvite', async (req, res) => {
             res.end();
         });
     } catch(err) {
-        console.log('-------------------------kk------------');
         console.log(err);
         res.redirect('/');
         res.end();
