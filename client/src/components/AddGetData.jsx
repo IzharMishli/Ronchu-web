@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-    const url = 'http://localhost:4000/createinvite';
+    const url = 'http://ronchu-website.herokuapp.com/createinvite';
 
      const getData = async ()=>{
    return await axios.get(url);
