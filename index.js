@@ -34,14 +34,12 @@ app.post('/createinvite', async (req, res) => {
     //const user = Schemas.Users;
     //const userId = await user.findOne({username:'eaglefang'}).exec();
     
-    const data = req.body.datajson;
-    console.log("--1--")
-    console.log(data);
-    console.log("--2--")
-    const invite = new Schemas.Invites({
-        name: "tedt23",
-        date: "test1111"
-    });
+    const data = req.body.data;
+    console.log(req.body);
+    data["price"] = req.body.price
+
+
+    const invite = new Schemas.Invites(data);
     try {
         await invite.save( (err, newTweetResults) => {
             

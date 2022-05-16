@@ -1,10 +1,10 @@
 import React,{useEffect, useState} from "react";
-import "../index.css"
-import "../styles/invitestyle.css"
-import Selector from "./invite/Selector"
-import FoodOption from "./invite/FoodOption"
-import Field from "./invite/Field"
-import axios from 'axios';
+import "../index.css";
+import "../styles/invitestyle.css";
+import Selector from "./invite/Selector";
+import FoodOption from "./invite/FoodOption";
+import Field from "./invite/Field";
+import {addData} from './AddGetData';
 
 
 import {
@@ -16,8 +16,8 @@ import {
 
 export default function()
 {
-    const [invite, setInvite] = useState({
-        name: "",
+    const initialInvite = {
+        name: "2",
         date: "",
         email: "",
         phone: "",
@@ -25,7 +25,9 @@ export default function()
         amount: 0,
         foods: [],
         deserts: []
-    })
+    }
+
+    const [invite, setInvite] = useState(initialInvite)
 
     const [iserror, setIserror] = useState(true);
     const [price, setPrice] = useState(0);
@@ -85,14 +87,9 @@ export default function()
         setPrice(price);
     }
 
-    
-    const url = "http://localhost:4000//createinvite";
-    let sendData = () => {
-        axios.post(url, invite)
-            .then(res => console.log('Data send'))
-            .catch(err => console.log(err.data))
-        }
-    
+    const addgetData= async()=>{
+        await addData({data: invite, price: price});
+      }
 
     return( 
         <div className="invite-page">
@@ -143,7 +140,7 @@ export default function()
                     
                     <div class="col-10">
                     <div class="form-group row">
-                    <FoodOption name="deserts" food="קינוח טעים רצח" func={handleChange} />
+                    <FoodOption name="deserts" food="קינוח טעים אש" func={handleChange} />
                         <FoodOption name="deserts" food="פירות" func={handleChange} />
                         <FoodOption name="deserts" food="קינוח טעים מאוד" func={handleChange} />
                         </div>
@@ -163,8 +160,8 @@ export default function()
                 <div class="form-group row">
                     <div class="col-sm-12">
                     
-                    <form method="POST" action="/createinvite">    
-                    <button type="submit" class="btn btn-success" name="datajson" value={invite}>שליחה</button>
+                    <form onSubmit={addgetData}>
+                    <button type="submit" class="btn btn-success" name="datajson" >שליחה</button>
                     </form>
                     </div>
                 </div>
