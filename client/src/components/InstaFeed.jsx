@@ -12,7 +12,7 @@ export default function(props){
         isLoaded: false,
         feeds: []
     })
-    var url = "https://graph.instagram.com/me/media?fields=caption,media_count,media_type,permalink,media_url&&access_token=" + props.token;
+  var url = "https://graph.instagram.com/me/media?fields=caption,media_count,media_type,permalink,media_url&&access_token=" + props.token;
     
     useEffect(function effectFunc() {
             fetch(url).then( res =>  res.json()).then(res => {
@@ -35,11 +35,11 @@ export default function(props){
             }, []);
                
                 
-               
+            console.log(posts);
             return (
                 
                 <div className="row insta-part">
-                    {posts.feeds.filter(post => String(post.caption).includes("#ronchu") && post.media_type=="IMAGE").map(post => (
+                    {posts.feeds.filter(post => String(post.caption).includes("ronchu") && (post.media_type=="IMAGE" || post.media_type=="CAROUSEL_ALBUM")).map(post => (
                         <InstaImg imgsrc={post.media_url} link={post.permalink}/>
                     ))}
                 </div>
