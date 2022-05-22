@@ -1,8 +1,8 @@
 import React from "react";
 import "../index.css"
 import Product from "./Product";
-import '../styles/insta.css'
-import InstaFeed from "./InstaFeed";
+//import InstaFeed from "./insta-react-feed/InstaFeed";
+import {InstaFeed} from "insta-react-feed";
 import {
     BrowserRouter as Router,
     Switch,
@@ -40,6 +40,7 @@ export default function()
             <hr />
             <InstaFeed 
                 token="IGQVJWTDdlZAlNna1NBemQ1eXhKQWRMNkZAvSlloWnMwaHkyai1rRnU1VVRya2lUMWNGQ0pwdkJOdkotN25xTVNWaHByZAXdIcHpJMUh0N3JDNTZAPNDdpSUJ3a0VLUnBXVXhYM2NGNVNwWVRIUU1yRkREUwZDZD"  
+                tag="ronchu" //can be empty
             />
             </section>
             

@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import Invite from "./Invite";
 import { Routes, Route, Link } from "react-router-dom";
 import "../index.css"
-import "../styles/insta.css"
 
 
 function App() {

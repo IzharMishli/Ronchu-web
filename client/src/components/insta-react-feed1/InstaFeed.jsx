@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
 import InstaImg from "./InstaImg";
 
-var styles = {"instagramItems":"_2R-kh","instagramItem":"_wPDyp","instagramImg":"_vzTHL","instagramIcon":"_3xnQP","errorMessage":"_3lhLL"};
-
 
 
 export default function(props){
@@ -39,7 +37,9 @@ export default function(props){
             return (
                 
                 <div className="row insta-part">
-                    {posts.feeds.filter(post => String(post.caption).includes("ronchu") && (post.media_type=="IMAGE" || post.media_type=="CAROUSEL_ALBUM")).map(post => (
+                    <h1>{posts.feeds.length > 0 ? "" : "Loading"}</h1>
+                    {posts.feeds.filter(post => String(post.caption).includes(props.tag ? props.tag : "") && (post.media_type=="IMAGE" || post.media_type=="CAROUSEL_ALBUM"))
+                    .map(post => (
                         <InstaImg imgsrc={post.media_url} link={post.permalink}/>
                     ))}
                 </div>

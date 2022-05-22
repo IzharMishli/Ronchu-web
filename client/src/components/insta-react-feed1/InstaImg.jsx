@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import "../styles/insta.css"
+import "./insta.css"
 
 
 export default function(props){
