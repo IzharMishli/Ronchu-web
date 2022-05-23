@@ -110,10 +110,10 @@ code {
   .bodyDiv {
     width : 100%;
   }
-  .insta-part{
-    width: 90%;
-  }
   .big-logo-img {
     width: 100%;
   }
+  .insta-part{
+    padding:0 20px 0 20px;
+ }
 }
