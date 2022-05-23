@@ -28,6 +28,22 @@ app.get('/api', (req, res) => {
     res.json({messege: "hello, this is api endpoint", location: dir})
 });
 
+app.post('/managepanel', async (req, res) => {
+    if (req.body.email === "123@gmail.com" && req.body.pass === "123"){
+        console.log("Auth succceded");
+        res.send(true);
+    }else{
+        console.log("failed auth");
+        res.send(false);
+    }
+})
+
+app.get('/managepanel', async (req, res) => {
+    const findResult = await Schemas.Invites.find()
+    res.send(findResult);
+    
+})
+
 app.post('/createinvite', async (req, res) => {
     const data = req.body.data;
     console.log(req.body);
@@ -53,12 +69,12 @@ app.post('/createinvite', async (req, res) => {
 if (process.env.NODE_ENV === 'production') {    
     // Serve any static files
     
-    var dir = path.resolve(__dirname, "build");
+    var dir = path.resolve(__dirname,"client", "build");
     app.use(express.static(dir));
     
     // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
-        res.sendFile(path.join(__dirname, "build", "index.html"));
+        res.sendFile(path.join(__dirname,"client", "build", "index.html"));
     });
 /*
     app.get('*', (req, res) => {

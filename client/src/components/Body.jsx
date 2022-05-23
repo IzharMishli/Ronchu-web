@@ -9,6 +9,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import Management from "./Management";
 
 
 export default function()

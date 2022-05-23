@@ -3,7 +3,10 @@ import axios from 'axios';
     const url = 'http://ronchu-website.herokuapp.com/createinvite';
 
      const getData = async ()=>{
-   return await axios.get(url);
+      return await axios.get("/managepanel").
+      then(res => {
+          return res.data;
+       })
     }
 
    const addData = async(data)=>{
