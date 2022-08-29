@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css"
+import "../styles/headerStyle.css"
 import Product from "./Product";
 //import InstaFeed from "./insta-react-feed/InstaFeed";
 import {InstaFeed} from "insta-react-feed";
@@ -23,7 +24,7 @@ export default function()
             צרו קשר
             <a href="https://www.instagram.com/ron_sharabi/"><img className="contact-icon" src={require("../images/instagram.png")}/></a>
             </h2>
-            <Link to="/invite"><button type="button" class="btn btn-outline-success">צור הזמנה</button></Link>
+            
             </section>
             <hr />
             <section id="products-part">

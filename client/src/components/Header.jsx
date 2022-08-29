@@ -29,7 +29,7 @@ export default function()
             </div> 
             </nav>
         </div>
-        <img className="big-logo-img" src={require("../images/logopic.png")} alt={"img not found"}/>
+        
     </header>
     
         

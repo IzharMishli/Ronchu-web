@@ -8,19 +8,25 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
   
 }
+
+.footer{
+  position: absolute;
+}
 @font-face {
   font-family: gan;
   src: url('./ganclm_bold-webfont.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
    url('./ganclm_bold-webfont.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }  
 
-.bodyDiv {
-  width : 90%;
-  margin: 10px auto;
+.bodyDiv, .navbar {
+  width : 100%;
+  margin: 0 auto;
 }
 .navDiv {
-  margin: auto;
-  width : 90%;
+  margin: 0;
+  width : 100%;
+  position: relative;
+  z-index: 5;
 }
 
 .big-logo-img {
@@ -38,6 +44,10 @@ code {
   height: auto;
   max-width: 300px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.gallery-part{
+  width: 80%;
+  margin:auto
 }
 
 .prodTitle{
